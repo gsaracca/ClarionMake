@@ -23,7 +23,7 @@ BACKUP_PATH     cstring( ONEDRIVE_PATH & '\backup' )
 BUILD_CONFIG    cstring( 'release' )
 SB_PATH         cstring( 'c:\Program Files (x86)\Lindersoft\SetupBuilder 10 Developer\sb10.exe' )  ! IF YOU WISH MAKE INSTALL
 WINRAR_PATH     cstring( 'c:\Program Files\WinRAR\WinRAR.exe' )                                    ! IF YOU WISH MAKE A RAR FILE
-INSTALL_PATH    cstring( 'instalador\gestion.sbp' )                                                ! REALTIVE PATH TO INSTALL FOR SETUP BUILDER
+INSTALL_PATH    cstring( '<RELATIVE PATH: myapp.sbp>' )                                            ! REALTIVE PATH TO INSTALL FOR SETUP BUILDER
 
 tCMD            file,driver('ascii','/clip=on'),name('make.cmd'),create
 record              record
