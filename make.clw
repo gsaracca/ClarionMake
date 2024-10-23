@@ -44,25 +44,25 @@ propertyList    cstring(100000)
     
 Window WINDOW('Batch Compiler'),AT(,,374,228),CENTER,GRAY,FONT('Courier New',10), |
             VSCROLL
-        BUTTON('&Compile'),AT(2,212,184,14),USE(?Compile),DEFAULT
-        BUTTON('&Cancel'),AT(188,212,184,14),USE(?Close)
-        LIST,AT(2,2,369,206),USE(?ListCMD),FROM(qCMD),FORMAT('29R(2)|M~Orden~C(0' & |
+        BUTTON('&Generate "make.cmd"'),AT(2,212,184,14),USE(?Comp),DEFAULT
+        BUTTON('&Close'),AT(188,212,184,14),USE(?Close)
+        LIST,AT(2,2,369,206),USE(?ListCMD),FROM(qCMD),FORMAT('29R(2)|M~Order~C(0' & |
                 ')@n_3@180L(2)|M~Path~C(0)@s255@80L(2)|M~Applications~C(0)@s255@')
     END
     code  
     open( Window )    
     accept
         case field()
-            of ?Compile
+            of ?Comp
                 if event() = EVENT:Accepted
                     compilar()
                 end !* if *
-            of ?Cancel
+            of ?Close
                 if event() = EVENT:Accepted
                     break
                 end !* if *            
         end !* case *
-    end !* accept *    
+    end !* accepr *    
     close( Window )
 
 add_prj     procedure( string _path, string _app )
